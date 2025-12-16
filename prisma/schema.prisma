@@ -1,0 +1,57 @@
+// Onde o Prisma Client será gerado e qual a versão.
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Onde a conexão com o banco de dados está definida.
+datasource db {
+  provider = "postgresql"
+  // A URL deve estar no seu arquivo .env (ex: DATABASE_URL="postgresql://user:password@localhost:5432/nomedobanco")
+  url      = env("DATABASE_URL")
+}
+
+// --------------------------------------------------------
+// MODELOS DE DADOS
+// --------------------------------------------------------
+
+// 1. MODELO USER (Usuário)
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique // O email deve ser único
+  createdAt DateTime @default(now())
+
+  // RELAÇÃO CORRIGIDA: Este campo lista todas as Tasks que pertencem a este User.
+  tasks     Task[] 
+  
+  // Se houver uma relação de um para muitos com Availability
+  availabilities Availability[]
+}
+
+// 2. MODELO TASK (Tarefa)
+model Task {
+  id        Int      @id @default(autoincrement())
+  title     String
+  completed Boolean  @default(false)
+  
+  // Chave Estrangeira: userId aponta para o User que criou a Task
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+  
+  createdAt DateTime @default(now())
+}
+
+// 3. MODELO AVAILABILITY (Disponibilidade)
+// Este modelo é usado nas suas rotas e serviços.
+model Availability {
+  id          Int      @id @default(autoincrement())
+  dayOfWeek   String
+  startTime   DateTime // Horário de início da disponibilidade
+  endTime     DateTime // Horário de fim da disponibilidade
+  
+  // Relacionamento com User (Assume que a disponibilidade pertence a um User)
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+} 

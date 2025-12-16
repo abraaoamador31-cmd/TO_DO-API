@@ -1,0 +1,23 @@
+{
+  "name": "to_do-api",
+  "version": "1.0.0",
+  "description": "API de tarefas em JavaScript puro",
+  "main": "backend/src/index.js",
+  "scripts": {
+    "dev": "nodemon --exec node --loader ts-node/esm src/index.js",
+    "start": "node backend/src/index.js"
+  },
+  "keywords": [],
+  "author": "Abraão",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^6.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.22.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "prisma": "^6.19.1"
+  }
+}

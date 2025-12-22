@@ -1,32 +1,71 @@
-# API de Gerenciamento de Tarefas
+Task Management API
+> RESTful Task Management API built with Node.js and PostgreSQL
 
-API backend simples para gerenciamento de tarefas, desenvolvida com Node.js e PostgreSQL, seguindo princípios básicos de organização e boas práticas em APIs REST.
+A backend REST API for task management, built with Node.js and PostgreSQL, designed with a focus on clean architecture, maintainability, and RESTful best practices.
 
-Este projeto foi criado com fins de estudo e para demonstrar conhecimentos em desenvolvimento backend.
+This project was developed for educational purposes and to demonstrate practical skills in backend engineering, including API design, data persistence, and code organization.
 
----
+Key Features
 
-## Funcionalidades
+Create tasks with structured data validation
 
-- Criar tarefas
-- Listar tarefas
+Retrieve a list of tasks stored in a relational database
 
----
+JSON-based HTTP communication
 
-## Tecnologias Utilizadas
+REST-compliant endpoints
 
-- Node.js
-- JavaScript / TypeScript
-- PostgreSQL
-- Express
-- Git
 
----
+Technologies & Tools
 
-## Estrutura da API
+Node.js
 
-A API segue o padrão REST e trabalha com requisições HTTP no formato JSON.
+JavaScript / TypeScript
 
-### Endpoints disponíveis
+PostgreSQL
 
-#### Listar tarefas
+Express.js
+
+Git
+
+
+Architecture & Design
+
+RESTful API architecture
+
+Clear separation of concerns
+
+Organized and scalable project structure
+
+Consistent naming conventions
+
+
+API Endpoints
+
+Method	Endpoint	Description
+
+GET	/tasks	Retrieve all tasks
+POST	/tasks	Create a new task
+
+
+Data Format
+
+All requests and responses use the JSON format and follow standard HTTP conventions.
+
+Project Purpose
+
+This project serves as a portfolio piece to demonstrate:
+
+Backend development fundamentals
+
+REST API design and implementation
+
+Interaction with a relational database (PostgreSQL)
+
+Use of modern backend tools and version control
+
+> RESTful Task Management API built with Node.js and PostgreSQL
+
+
+
+Base bem feita, apresentação correta — é assim que se constrói reputação técnica.

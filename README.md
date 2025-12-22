@@ -66,6 +66,3 @@ Use of modern backend tools and version control
 
 > RESTful Task Management API built with Node.js and PostgreSQL
 
-
-
-Base bem feita, apresentação correta — é assim que se constrói reputação técnica.
